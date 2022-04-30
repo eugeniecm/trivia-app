@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>Here are your questions: {{ response_data["question"] }}</h2> <!--this needs to be updated once we have coded-->
+
+    <p>Answer: {{ response_data["correct_answer"] }}</p>
+
+    <!-- TODO: consider using a table instead of a list -->
+    <!-- TODO: consider adding images using the provided icon urls -->
+
+
+{% endblock %}
