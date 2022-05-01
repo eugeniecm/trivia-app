@@ -1,5 +1,7 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, flash # FYI new imports
 
+#from app.weather_service import get_hourly_forecasts
+
 trivia_routes = Blueprint("trivia_routes", __name__)
 
 @trivia_routes.route("/trivia/game.json")
@@ -8,15 +10,19 @@ def trivia_game_api():
     print("THIS IS YOUR TRIVIA GAME (API)...")
     print("URL PARAMS:", dict(request.args))
 
-    # country_code = request.args["country_code"] #the dict might not have this key all the time
-    country_code = request.args.get("country_code") or "US"
-    zip_code = request.args.get("zip_code") or "20057"
+    #accept user input here. adapt to nmbr of players later
 
-    results = get_hourly_forecasts(country_code=country_code, zip_code=zip_code)
-    if results:
-        return jsonify(results)
-    else:
-        return jsonify({"message":"Invalid Geography. Please try again."}), 404
+    # country_code = request.args["country_code"] #the dict might not have this key all the time
+    #country_code = request.args.get("country_code") or "US"
+    #zip_code = request.args.get("zip_code") or "20057"
+
+    #data validation here 
+    #get_hourly_forecasts this function fetches in information from the API 
+    #results = get_hourly_forecasts(country_code=country_code, zip_code=zip_code)
+    #if results:
+        #return jsonify(results)
+    #else:
+        #return jsonify({"message":"Invalid Geography. Please try again."}), 404
 
 @weather_routes.route("/weather/form")
 def weather_form():
