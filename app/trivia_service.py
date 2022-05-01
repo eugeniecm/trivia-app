@@ -8,7 +8,7 @@ import janitor
 
 url = "https://opentdb.com/api.php?amount=10"
 
-pprint(response_data)
+print(response_data)
 
 #this selects all the questions and appends it to this list
 question_list = []
