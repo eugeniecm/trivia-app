@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, render_template, redirect, flash # FYI new imports
 
-#from app.weather_service import get_hourly_forecasts
+from app.trivia_service import list_question
 
 trivia_routes = Blueprint("trivia_routes", __name__)
 
