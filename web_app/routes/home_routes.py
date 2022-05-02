@@ -9,7 +9,7 @@ home_routes = Blueprint("home_routes", __name__)
 def index():
     print("HOME...")
     #return "Welcome Home"
-    return render_template("trivia_game.html")
+    return render_template("home.html")
 
 @home_routes.route("/trivia/game")
 def about():
