@@ -37,9 +37,9 @@
         https://getbootstrap.com/docs/5.0/components/navbar/
     -->
     {% set nav_links = [
-      ('/trivia/game', 'trivia_game', 'Trivia Game')
-      ('/home', 'home', 'Home'),
-    ] -%}
+        ('/trivia/game', 'trivia_game', 'Trivia Game')
+      ] -%}
+
     {% set active_page = active_page|default('home') -%}
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
