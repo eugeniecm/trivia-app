@@ -28,7 +28,8 @@ trivia_routes = Blueprint("trivia_routes", __name__)
 @trivia_routes.route("/trivia/game", methods=["POST"])
 def trivia_game():
     print("THIS IS YOUR TRIVIA GAME...")
-    return render_template("trivia_game.html")
+    outcome = list_question()
+    return render_template("trivia_game.html", outcome=outcome)
 
 #@weather_routes.route("/weather/forecast", methods=["GET", "POST"])
 #def weather_forecast():

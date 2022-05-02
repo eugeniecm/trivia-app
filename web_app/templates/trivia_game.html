@@ -2,10 +2,14 @@
 
 {% block content %}
 
-    <h2>Here are your questions: {{ response_data["question"] }}</h2> <!--this needs to be updated once we have coded-->
+    <h2>Here are your questions: </h2> <!--this needs to be updated once we have coded-->
 
-    <p>Answer: {{ response_data["correct_answer"] }}</p>
-
+    <ul>
+    {% for question in outcome["question"] %}
+        <li>{{ question }} </li>
+    {% endfor %}
+    </ul>
+    
     <!-- TODO: consider using a table instead of a list -->
     <!-- TODO: consider adding images using the provided icon urls -->
 
