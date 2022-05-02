@@ -14,9 +14,6 @@ def list_question():
     response = requests.get(request_url)
     response_data = json.loads(response.text)
 
-    trivia_url = parsed_response["response_data"]["results"]
-    trivia_response = requests.get(trivia_url)
-
     #this code appends the questions in this list
     question_list = []
     for q in response_data["results"]:
@@ -34,7 +31,7 @@ def list_question():
     for q in response_data["results"]:
         answer_list.append(q["correct_answer"])
 
-    return{"question:": question, "correct_answer:": correct_answer}
+    return{"question": question_list, "correct_answer": answer_list}
 
 
 

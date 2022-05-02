@@ -9,6 +9,25 @@
         <li>{{ question }} </li>
     {% endfor %}
     </ul>
+
+    <h2> Scroll down for answers </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+    <h2>... </h2>
+
+    <h2>Here are your answers: </h2>
+
+    <ul>
+        {% for answer in outcome["correct_answer"] %}
+            <li>{{ answer }} </li>
+        {% endfor %}
+    </ul>
     
     <!-- TODO: consider using a table instead of a list -->
     <!-- TODO: consider adding images using the provided icon urls -->

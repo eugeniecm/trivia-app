@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask
 
 from web_app.routes.home_routes import home_routes
-from web_app.routes.trivia_routes import trivia_routes
+#from web_app.routes.trivia_routes import trivia_routes
 
 load_dotenv()
 
@@ -13,7 +13,7 @@ def create_app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = SECRET_KEY
     app.register_blueprint(home_routes)
-    app.register_blueprint(trivia_routes)
+    #app.register_blueprint(trivia_routes)
     return app
 
 if __name__ == "__main__":
