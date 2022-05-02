@@ -9,13 +9,13 @@ home_routes = Blueprint("home_routes", __name__)
 def index():
     print("HOME...")
     #return "Welcome Home"
-    return render_template("home.html")
+    return render_template("trivia_game.html")
 
-@home_routes.route("/about")
+@home_routes.route("/trivia/game")
 def about():
-    print("ABOUT...")
+    print("TRIVIA GAME:")
     #return "About Me"
-    return render_template("about.html")
+    return render_template("trivia_game.html")
 
 
 @home_routes.route("/another")
