@@ -11,12 +11,6 @@ def index():
     #return "Welcome Home"
     return render_template("home.html")
 
-#@home_routes.route("/trivia/game")
-#def about():
-#    print("TRIVIA GAME:")
-#    #return "About Me"
-#    return render_template("trivia_game.html")
-
 @home_routes.route("/another")
 def another():
     print("ANOTHER PAGE MAYBE...")
