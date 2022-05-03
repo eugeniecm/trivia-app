@@ -65,6 +65,10 @@ pytest
 CI=true pytest
 ```
 
+## [Deploying](/DEPLOYING.md)
+
+Follow the deployment instructions to deploy the app to a remote server (Heroku)
+
 ## [License](/LICENSE.md)
 
 Please refer to the license file

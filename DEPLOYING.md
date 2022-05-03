@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-If you haven't yet done so, [sign up for a Heroku account](https://github.com/prof-rossetti/intro-to-python/blob/master/notes/clis/heroku.md#prerequisites) and [install the Heroku CLI](https://github.com/prof-rossetti/intro-to-python/blob/master/notes/clis/heroku.md#installation), and make sure you can login and list your applications.
+If you haven't yet done so, [sign up for a Heroku account](https://signup.heroku.com/) and [install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install), and make sure you can login and list your applications.
 
 ```sh
 heroku login # just a one-time thing when you use heroku for the first time
@@ -10,16 +10,14 @@ heroku login # just a one-time thing when you use heroku for the first time
 heroku apps # at this time, results might be empty-ish
 ```
 
-> NOTE: some students have reported that when running `heroku login` in Git Bash, it hangs after successfully logging them in. If this is the case for you, close that Git Bash window and when you open a new one you should be all set.
-
 ## Server Setup
 
 > IMPORTANT: run the following commands from the root directory of your repository!
 
-Use the online [Heroku Dashboard](https://dashboard.heroku.com/) or the command-line (instructions below) to [create a new application server](https://dashboard.heroku.com/new-app), specifying a unique name (e.g. "notification-app-123", but yours will need to be different):
+Use the online [Heroku Dashboard](https://dashboard.heroku.com/) or the command-line (instructions below) to [create a new application server](https://dashboard.heroku.com/new-app), specifying a unique name (e.g. "trivia-app-123", but yours will need to be different):
 
 ```sh
-heroku create notification-app-123 # choose your own unique name!
+heroku create trivia-app-123 # choose your own unique name!
 ```
 
 Verify the app has been created:
@@ -51,12 +49,9 @@ heroku config # at this time, results might be empty-ish
 # set environment variables:
 heroku config:set APP_ENV="production"
 
-heroku config:set SENDGRID_API_KEY="_________"
-heroku config:set SENDER_EMAIL_ADDRESS="someone@gmail.com"
+#this code should be included in your heroku config var if you decide to have user form
+#heroku config:set CATEGORY="General Knowledge"
 
-heroku config:set COUNTRY_CODE="US"
-heroku config:set ZIP_CODE="20057"
-heroku config:set USER_NAME="Jon Snow"
 ```
 
 At this point, you should be able to verify the production environment has been configured with the proper environment variable values:
@@ -87,28 +82,11 @@ heroku run bash # login to the server
 # ... exit # logout
 
 # or alternatively, run it from your computer, in "detached" mode:
-heroku run "python -m app.daily_briefing"
+heroku run "python -m app.trivia_game"
 ```
 
-## Scheduling the Script
+## Go play your trivia game with your friends!
 
-Finally, provision and configure the server's "Heroku Scheduler" resource to run the notification script at specified intervals, for example once per day.
+Be the coolest person at the next party you attend and show off your coding skills!
 
-From the "Resources" tab in your application's Heroku dashboard, search for an add-on called "Heroku Scheduler" and provision the server with a free plan.
-
-![a screenshot of searching for the resource](https://user-images.githubusercontent.com/1328807/54228813-59ff3400-44d9-11e9-803e-21fbd8f6c52f.png)
-
-![a screenshot of provisioning the resource](https://user-images.githubusercontent.com/1328807/54228820-5e2b5180-44d9-11e9-9901-13c538a73ac4.png)
-
-> NOTE: if doing this for the first time, Heroku may ask you to provide billing info. Feel free to provide it, as the services we are using to complete this exercise are all free, and your card should not be charged!
-
-Finally, click on the provisioned "Heroku Scheduler" resource from the "Resources" tab, then click to "Add a new Job". When adding the job, choose to execute the designated python command (`python -m app.daily_briefing`) at a scheduled interval (e.g. every 10 minutes), and finally click to "Save" the job:
-
-![a screenshot of the job configuration menu](https://user-images.githubusercontent.com/1328807/54229044-da259980-44d9-11e9-91d8-51773499cbfb.png)
-
-
-## It's Alive!
-
-Congratulations, you have just deployed a software service!
-
-Monitor your inbox over the specified time period and witness your notification service in action!
+Refresh the page each time you want new questions. Customize your application if you want with categories. 
