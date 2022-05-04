@@ -10,7 +10,7 @@ from pprint import pprint
 import janitor
 
 def list_question():
-    request_url = f"https://opentdb.com/api.php?amount=10"
+    request_url = f"https://opentdb.com/api.php?amount=10&difficulty=easy&type=boolean"
     response = requests.get(request_url)
     response_data = json.loads(response.text)
 
