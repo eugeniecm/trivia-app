@@ -16,30 +16,3 @@ def test_list_question():
     assert isinstance(results["correct_answer"], list)
     assert isinstance(results["correct_answer"][0], bool)
 
-    #with invalid geography, fails gracefully and returns nothing:
-    #invalid_results = get_hourly_forecasts(country_code="US", zip_code="OOPS")
-    #assert invalid_results == None
-
-
-   #assert len(results["response_data"]) == 2 
-
-   #assert results["question"] == "list"
-   #assert results["correct_answer"] == "?"
-
-   #invalid_results = list_question(country_code="US", zip_code="OOPS")
-   #assert invalid_results == None
-# assert that answers are boolean
-# assert that results is a list
-# assert that question is key within a dict
-
-#others
-    #assert len(results["hourly_forecasts"]) == 24
-    #forecast = results["hourly_forecasts"][0]
-    #assert sorted(list(forecast.keys())) == ["conditions", "image_url", "temp", "timestamp"]
-    #assert forecast["timestamp"].endswith(":00")
-    #assert f"{DEGREE_SIGN}F" in forecast["temp"]
-
-    # with invalid geography, fails gracefully and returns nothing:
-    #invalid_results = get_hourly_forecasts(country_code="US", zip_code="OOPS")
-    #assert invalid_results == None
-
