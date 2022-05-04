@@ -25,7 +25,7 @@ def list_question():
     #this code appends the answer in this list
     answer_list = []
     for q in response_data["results"]:
-        answer_list.append(q["correct_answer"])
+        answer_list.append(bool(q["correct_answer"]))
 
     return{"question": question_list, "correct_answer": answer_list}
 
