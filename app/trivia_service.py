@@ -17,14 +17,10 @@ def list_question():
     #this code appends the questions in this list
     question_list = []
     for q in response_data["results"]:
-        question_list.append(q["question"])
-
-    #this code cleans up the data
-    for question in question_list: 
-        if "&quot;" in question:
-            new_string = question.replace("&quot;", "'")
-        if "&#039;s" in question: 
-            new_string2 = question.replace("&#039;s", "'")
+        question = q["question"]
+        question = question.replace("&quot;", "'")
+        question = question.replace("&#039;s", "'")
+        question_list.append(question)
 
     #this code appends the answer in this list
     answer_list = []
@@ -32,3 +28,4 @@ def list_question():
         answer_list.append(q["correct_answer"])
 
     return{"question": question_list, "correct_answer": answer_list}
+

@@ -9,7 +9,8 @@ CI_ENV = os.getenv("CI") == "true"
 def test_list_question():
     # with valid geography, returns the city name and forecast info:
     results = list_question(country_code="US", zip_code="20057")
-    assert results["question"] == "?"
+    assert len(results["response_data"]) == 2 
+    assert results["question"] == "list"
     assert results["correct_answer"] == "?"
 
     invalid_results = list_question(country_code="US", zip_code="OOPS")
