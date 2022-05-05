@@ -18,6 +18,7 @@ def list_question():
     question_list = []
     for q in response_data["results"]:
         question = q["question"]
+        #clean up the data within the trivia API
         question = question.replace("&quot;", "'")
         question = question.replace("&#039;s", "'")
         question = question.replace("&#039;", "'")
