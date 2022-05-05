@@ -23,6 +23,7 @@ def list_question():
         question = question.replace("&#039;s", "'")
         question = question.replace("&#039;", "'")
         question = question.replace("&eacute;", "e")
+        question = question.replace("&rsquo;", "'")
         question_list.append(question)
 
     #this code appends the answer in this list
