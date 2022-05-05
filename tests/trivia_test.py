@@ -14,5 +14,5 @@ def test_list_question():
     assert len(results["question"]) == 10
     assert len(results["correct_answer"]) == 10
     assert isinstance(results["correct_answer"], list)
-    assert isinstance(results["correct_answer"][0], bool)
+    
 
