@@ -20,6 +20,8 @@ def list_question():
         question = q["question"]
         question = question.replace("&quot;", "'")
         question = question.replace("&#039;s", "'")
+        question = question.replace("&#039;", "'")
+        question = question.replace("&eacute;", "e")
         question_list.append(question)
 
     #this code appends the answer in this list
